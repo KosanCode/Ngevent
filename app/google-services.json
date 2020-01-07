@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "548563659549-5qe0i3ng7hnhie9m78u346v6o35j3i4f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kelompok03.amikomngevent",
+            "certificate_hash": "4fc9b194ab8e86350fc7fe228f1dbff376edf284"
+          }
+        },
+        {
           "client_id": "548563659549-rg647nr404k0a16thoqjdkpi92co000u.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -12,7 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.kelompok03.amikomngevent.LoginActivity;
 import com.kelompok03.amikomngevent.MainActivity;
 import com.kelompok03.amikomngevent.R;
@@ -53,6 +55,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnLogout:
+                FirebaseAuth.getInstance().signOut(); //logout
                 Intent intentLogin = new Intent(getActivity().getApplicationContext(), LoginActivity.class);
                 startActivity(intentLogin);
                 break;
