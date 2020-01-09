@@ -10,11 +10,38 @@ xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/grad"
     tools:context=".EditProfileActivity">
 
+
+    <ImageView
+        android:id="@+id/user_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher" />
+
+<com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/textInputLayoutName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="40dp">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama Lengkap"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="@android:color/white"/>
+</com.google.android.material.textfield.TextInputLayout>
+
+
 <com.google.android.material.textfield.TextInputLayout
     android:id="@+id/textInputLayoutEmail"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="40dp">
+    android:layout_marginTop="20dp">
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textInputEditTextEmail"
@@ -42,53 +69,6 @@ xmlns:tools="http://schemas.android.com/tools"
         android:textColor="@android:color/white"/>
 </com.google.android.material.textfield.TextInputLayout>
 
-<com.google.android.material.textfield.TextInputLayout
-    android:id="@+id/textInputLayoutTwitter"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="20dp">
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditTextTwitter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Twitter"
-        android:inputType="textPassword"
-        android:maxLines="1"
-        android:textColor="@android:color/white"/>
-</com.google.android.material.textfield.TextInputLayout>
-
-<com.google.android.material.textfield.TextInputLayout
-    android:id="@+id/textInputLayoutInstagram"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="20dp">
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditTextInstagram"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Instagram"
-        android:inputType="textPassword"
-        android:maxLines="1"
-        android:textColor="@android:color/white"/>
-</com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditTextPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_confirm_password"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:textColor="@android:color/white"/>
-    </com.google.android.material.textfield.TextInputLayout>
 
 <Button
     android:id="@+id/btnUpdate"
