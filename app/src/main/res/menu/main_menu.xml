@@ -5,9 +5,9 @@
         android:icon="@drawable/ic_dashboard"
         android:title="DASHBOARD" />
     <item
-        android:id="@+id/mNotif"
-        android:icon="@drawable/ic_notifications"
-        android:title="NOTIFICATIONS" />
+        android:id="@+id/mCreate"
+        android:icon="@drawable/ic_add"
+        android:title="ADD EVENT" />
     <item
         android:id="@+id/mProfile"
         android:icon="@drawable/ic_person"

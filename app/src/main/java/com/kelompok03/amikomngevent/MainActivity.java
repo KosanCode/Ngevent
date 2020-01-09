@@ -4,22 +4,19 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.kelompok03.amikomngevent.BnvFragment.DashboardFragment;
-import com.kelompok03.amikomngevent.BnvFragment.DashboardPager.LatestEventFragment;
-import com.kelompok03.amikomngevent.BnvFragment.NotificationFragment;
+import com.kelompok03.amikomngevent.BnvFragment.AddEventFragment;
 import com.kelompok03.amikomngevent.BnvFragment.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity{
     BottomNavigationView bnvHome;
 
     DashboardFragment dashboardFragment;
-    NotificationFragment notificationFragment;
+    AddEventFragment addEventFragment;
     ProfileFragment profileFragment;
 
     @Override
@@ -28,7 +25,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 
         dashboardFragment = new DashboardFragment();
-        notificationFragment = new NotificationFragment();
+        addEventFragment = new AddEventFragment();
         profileFragment = new ProfileFragment();
 
         switchFrag(dashboardFragment);
@@ -42,8 +39,8 @@ public class MainActivity extends AppCompatActivity{
                         dashboardFragment = new DashboardFragment();
                         switchFrag(dashboardFragment);
                         break;
-                    case R.id.mNotif:
-                        switchFrag(notificationFragment);
+                    case R.id.mCreate:
+                        switchFrag(addEventFragment);
                         break;
                     case R.id.mProfile:
                         switchFrag(profileFragment);
