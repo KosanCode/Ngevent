@@ -23,8 +23,9 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
+
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.DocumentReference;
 
 import org.w3c.dom.Document;
 
@@ -51,6 +52,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     private FirebaseFirestore fStore;
     String userID;
+
     private static final String TAG = RegisterActivity.class.getSimpleName();
 
     AppCompatButton appCompatButtonRegister;

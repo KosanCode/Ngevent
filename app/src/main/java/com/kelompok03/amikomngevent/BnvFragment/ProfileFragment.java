@@ -26,6 +26,9 @@ import com.kelompok03.amikomngevent.MainActivity;
 import com.kelompok03.amikomngevent.R;
 import com.kelompok03.amikomngevent.RegisterActivity;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.DocumentReference;
+
 /**
  * A simple {@link Fragment} subclass.
  */
