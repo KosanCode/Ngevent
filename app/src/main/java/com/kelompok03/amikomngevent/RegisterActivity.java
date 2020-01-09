@@ -7,18 +7,29 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.widget.NestedScrollView;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import org.w3c.dom.Document;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -37,6 +48,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private FirebaseAuth mAuth;
 
     private ProgressBar progressBar;
+
+    private FirebaseFirestore fStore;
+    String userID;
+    private static final String TAG = RegisterActivity.class.getSimpleName();
 
     AppCompatButton appCompatButtonRegister;
     AppCompatTextView textViewLinkLogin;
@@ -66,8 +81,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         textViewLinkLogin = (AppCompatTextView) findViewById(R.id.textViewLinkLogin);
 
         mAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
 
         progressBar = findViewById(R.id.progressBar);
+
+
 
         appCompatButtonRegister.setOnClickListener(this);
         textViewLinkLogin.setOnClickListener(this);
@@ -77,8 +95,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()) {
             case R.id.appCompatButtonRegister:
 
-                String email = textInputEditTextEmail.getText().toString().trim();
+                final String email = textInputEditTextEmail.getText().toString().trim();
                 String password = textInputEditTextPassword.getText().toString().trim();
+                final String name = textInputEditTextName.getText().toString();
+                final String phone = textInputEditTextPhone.getText().toString();
 
                 if(TextUtils.isEmpty(email)) {
                     textInputEditTextEmail.setError("Email tidak boleh kosong!");
@@ -103,6 +123,25 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
                             Toast.makeText(RegisterActivity.this, "User berhasil dibuat.", Toast.LENGTH_SHORT).show();
+                            userID = mAuth.getCurrentUser().getUid();
+                            DocumentReference documentReference = fStore.collection("users").document(userID);
+                            Map<String, Object> user = new HashMap<>();
+                            user.put("name", name);
+                            user.put("email", email);
+                            user.put("phone", phone);
+
+                            //insert to db
+                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(TAG, "Sukses: data user berhasil dibuat untuk " + userID);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d(TAG, "Gagal" + e.toString());
+                                }
+                            });
                             Intent intentHome = new Intent(getApplicationContext(), LoginActivity.class);
                             startActivity(intentHome);
                         }else {
