@@ -52,7 +52,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="5dp"
                         android:maxLines="15"
                         android:text="Technology"
                         android:textColor="@color/followingBg"
@@ -91,7 +91,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="5dp"
                         android:maxLines="15"
                         android:text="Multimedia"
                         android:textColor="@color/followingBg"
@@ -130,7 +130,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="5dp"
                         android:maxLines="15"
                         android:text="Music"
                         android:textColor="@color/followingBg"
@@ -169,7 +169,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="5dp"
                         android:maxLines="15"
                         android:text="Food"
                         android:textColor="@color/followingBg"
@@ -208,7 +208,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="5dp"
                         android:maxLines="15"
                         android:text="Sport"
                         android:textColor="@color/followingBg"
@@ -247,7 +247,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="5dp"
                         android:maxLines="15"
                         android:text="Games"
                         android:textColor="@color/followingBg"
@@ -259,5 +259,10 @@
         </LinearLayout>
 
     </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listEventRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
