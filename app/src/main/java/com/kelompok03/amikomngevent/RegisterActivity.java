@@ -113,7 +113,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 }
 
                 if(password.length() < 6) {
-                    textInputEditTextPassword.setError("Password harus lebih dari 6 karakter");
+                    textInputEditTextPassword.setError("Password kurang dari 6 karakter");
                     return;
                 }
 
