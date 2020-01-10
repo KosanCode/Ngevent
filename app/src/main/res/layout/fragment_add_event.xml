@@ -51,9 +51,15 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textColor="@color/colorAccent" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/colorAccent" />
+
         <Spinner
             android:layout_marginTop="5dp"
-            android:id="@+id/sp_kategori"
+            android:id="@+id/spKategori"
             android:entries="@array/kategori"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -67,6 +73,12 @@
             android:textSize="12sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textColor="@color/colorAccent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/colorAccent" />
 
         <DatePicker
             android:layout_marginTop="5dp"
@@ -88,7 +100,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Lokasi"
-                android:inputType="textPassword"
                 android:maxLines="1"
                 android:textColor="@android:color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -130,7 +141,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/followingBg"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="15dp"/>
 
     </LinearLayout>
 
